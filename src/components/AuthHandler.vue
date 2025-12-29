@@ -41,7 +41,7 @@ export default {
         // Get token from URL
         const urlParams = new URLSearchParams(window.location.search)
         const token = urlParams.get('token')
-
+        console.log(token)
         if (!token) {
           this.error = 'No authentication token provided.'
           this.loading = false
@@ -54,7 +54,10 @@ export default {
           .select('telegram_user_id, expires_at')
           .eq('token', token)
           .single()
-
+        
+        console.log(data)
+        console.log(error)
+        
         if (error || !data) {
           this.error = 'Invalid or expired token.'
           this.loading = false
