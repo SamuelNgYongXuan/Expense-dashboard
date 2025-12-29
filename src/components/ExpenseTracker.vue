@@ -194,8 +194,6 @@ export default {
 <template>
   <div class="dashboard">
 
-    <button @click="logout" class="logout-btn">Logout</button>
-
     <div class="content-wrapper">
       <!-- Left Column: Stats -->
       <div class="stats-section">
@@ -453,26 +451,6 @@ export default {
   background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
   border-radius: 3px;
   transition: width 0.3s ease;
-}
-
-.logout-btn {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  background: rgba(255, 255, 255, 0.9);
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 500;
-  color: #667eea;
-  transition: all 0.2s ease;
-  z-index: 1000;
-}
-
-.logout-btn:hover {
-  background: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 
