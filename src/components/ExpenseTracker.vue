@@ -63,16 +63,7 @@ export default {
       this.$router.push('/auth')
     },
     getCategoryIcon(category) {
-      const icons = {
-        'Food & Drinks': '🍔',
-        'Transport': '🚗',
-        'Entertainment': '🎬',
-        'Shopping': '💡',
-        'Apparals': '👔',
-        'Healthcare': '💊',
-        'Others': '💰'
-      }
-      return icons[category] || '📦'
+      return category.slice(0,1) || '📦'
     },
     previousMonth() {
       const newDate = new Date(this.selectedDate);
@@ -145,7 +136,7 @@ export default {
         if (!categoryMap[categoryName]) {
           categoryMap[categoryName] = {
             name: categoryName.slice(2),
-            icon: this.getCategoryIcon(categoryName.slice(2).trim()),
+            icon: this.getCategoryIcon(categoryName),
             amount: 0
           }
         }
