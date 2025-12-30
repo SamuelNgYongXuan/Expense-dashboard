@@ -63,6 +63,8 @@ export default {
       this.$router.push('/auth')
     },
     getCategoryIcon(category) {
+      console.log(category)
+      console.log(category.slice(0,1))
       return category.slice(0,1) || '📦'
     },
     previousMonth() {
@@ -132,7 +134,7 @@ export default {
       const categoryMap = {}
       data.forEach(expense => {
         const categoryName = expense.category.trim()
-        
+        console.log(categoryName)
         if (!categoryMap[categoryName]) {
           categoryMap[categoryName] = {
             name: categoryName.slice(2),
